@@ -8,4 +8,3 @@ CREATE TABLE quotes (
                         content TEXT NOT NULL,
                         PRIMARY KEY (id)
 );
---hello
