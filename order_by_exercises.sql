@@ -2,6 +2,17 @@ USE employees;
 
 SELECT *
 FROM employees
+WHERE first_name IN ('Irena','Vidya','Maya')
+ORDER BY first_name ASC, last_name DESC ;
+
+SELECT *
+FROM employees
+WHERE last_name LIKE 'E%';
+
+USE employees;
+
+SELECT *
+FROM employees
 WHERE first_name IN ('Irena','Vidya','Maya');
 
 SELECT *
@@ -15,20 +26,20 @@ WHERE last_name LIKE ('%q%');
 SELECT *
 FROM employees
 WHERE first_name= 'Irena'
-OR first_name = 'Vidya'
-OR first_name = 'Maya';
+   OR first_name = 'Vidya'
+   OR first_name = 'Maya';
 
 SELECT *
 FROM employees
 WHERE gender = 'M'
-AND (first_name = 'Irena'
+  AND (first_name = 'Irena'
     OR first_name = 'Vidya'
     OR first_name = 'Maya');
 
 SELECT *
 FROM employees
 WHERE last_name LIKE  'E%'
-    OR last_name LIKE '%e';
+   OR last_name LIKE '%e';
 
 SELECT first_name, last_name
 FROM employees
@@ -44,12 +55,12 @@ WHERE last_name LIKE 'Ho%'
 SELECT *
 FROM employees
 WHERE last_name LIKE  'E%'
-   AND last_name LIKE '%e';
+  AND last_name LIKE '%e';
 
 SELECT *
 FROM employees
 WHERE last_name LIKE '%q%'
-AND NOT last_name LIKE '%qu%'
+  AND NOT last_name LIKE '%qu%'
 
 
 
