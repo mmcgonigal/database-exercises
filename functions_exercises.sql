@@ -39,6 +39,104 @@ AND MONTH (birth_date) = 12
 AND DAY(birth_date) = 25;
 
 
+# what are the top three most common job titles?
+SELECT title, COUNT(*)
+FROM titles
+GROUP BY title
+ORDER BY COUNT(*) DESC
+LIMIT 3;
+
+
+
+# what is the lowest employee number for the first senior engineers in the company?
+SELECT emp_no
+FROM titles
+WHERE title = 'Senior Engineer'
+ORDER BY from_date ASC
+LIMIT 5;
+
+SELECT *
+FROM employees
+WHERE emp_no =235233;
+
+
+# what is the most common ‘from date’ for job titles? for staff only?
+
+SELECT from_date, COUNT(title)
+FROM titles
+GROUP BY from_date
+ORDER BY COUNT(title) DESC;
+# most common from date : 1998 - 10-25
+
+SELECT from_date, COUNT(from_date)
+FROM titles
+WHERE title = 'staff'
+GROUP BY from_date
+ORDER BY COUNT(from_date) DESC;
+#for 'staff' most common from_date : 1990-04-20
+
+
+# what is the highest employee number for an engineer?
+SELECT emp_no,title
+FROM titles
+WHERE title = 'engineer'
+ORDER BY emp_no DESC;
+# highest employee number : 499999
+
+
+# what are the names of the 10 most recently hired employees who identified as female in the company? the first 10?
+
+SELECT *
+FROM employees
+WHERE gender = 'F'
+ORDER BY hire_date DESC
+LIMIT 10 ;
+
+
+# what is the most common birthday?
+
+SELECT birth_date, COUNT(birth_date)
+FROM employees
+GROUP BY birth_date
+ORDER BY COUNT(birth_date) DESC;
+#  most common birthday : 1952 -03-08
+
+# what is the most common  birthday for employees who identified as female? how about vs. those who identified as male?
+SELECT birth_date,gender, COUNT(birth_date)
+FROM employees
+WHERE gender = 'F'
+GROUP BY birth_date
+ORDER BY COUNT(birth_date) DESC;
+# most common birthday for female employees 1953 -10-12
+SELECT birth_date,gender, COUNT(birth_date)
+FROM employees
+WHERE gender = 'M'
+GROUP BY birth_date
+ORDER BY COUNT(birth_date) DESC;
+# most common birthday for male employees 1953-07-11
+
+
+
+# what is the most common hire date for female and male employees?
+SELECT hire_date, COUNT(hire_date)
+FROM employees
+GROUP BY hire_date
+ORDER BY COUNT(hire_date) DESC;
+# most hired date for male and female : 1985-06-20
+
+
+# what is the longest last name of someone born on March 8, 1952?
+# SELECT  last_name, COUNT(CHAR_LENGTH(last_name))
+# FROM employees
+# GROUP BY last_name
+# ORDER BY COUNT(CHAR_LENGTH(last_name)) DESC;
+# # WHERE YEAR(birth_date)= 1952
+# # AND MONTH(birth_date) = 03
+# # AND DAY(birth_date) = 08;
+
+
+
+
 
 
 
