@@ -1,9 +1,45 @@
 USE employees;
-
+# number 2 ,should start with Irena pelz and finish with Vidya Awdeh
 SELECT *
 FROM employees
 WHERE first_name IN ('Irena','Vidya','Maya')
-ORDER BY first_name ASC, last_name DESC ;
+ORDER BY first_name ASC;
+
+
+#  number 3 , result of Irena Acton and end with Vidya Zweizig
+SELECT *
+FROM employees
+WHERE first_name IN ('Irena','Vidya','Maya')
+ORDER BY first_name ASC, last_name ASC ;
+
+# number 4 . result of Irena Acton to maya Zyda
+SELECT *
+FROM employees
+WHERE first_name IN ('Irena','Vidya','Maya')
+ORDER BY last_name ASC;
+
+# number 5update employees with "e" in their last name to sort by their result by their employee number
+SELECT *
+FROM employees
+WHERE last_name LIKE '%e%'
+ORDER BY emp_no ASC;
+
+# number 6 reverse
+
+SELECT *
+FROM employees
+WHERE last_name LIKE '%e%'
+ORDER BY emp_no DESC;
+
+
+
+
+
+
+
+
+
+
 
 SELECT *
 FROM employees
