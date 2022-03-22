@@ -34,7 +34,10 @@ ORDER BY last_name;
 
 
 #7
-
+SELECT gender, COUNT(*)
+FROM employees
+WHERE first_name IN ('Irena','Maya','Vidya')
+GROUP BY gender;
 
 
 
