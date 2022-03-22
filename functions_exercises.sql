@@ -129,11 +129,23 @@ ORDER BY COUNT(hire_date) DESC;
 # SELECT  last_name, COUNT(CHAR_LENGTH(last_name))
 # FROM employees
 # GROUP BY last_name
-# ORDER BY COUNT(CHAR_LENGTH(last_name)) DESC;
-# # WHERE YEAR(birth_date)= 1952
-# # AND MONTH(birth_date) = 03
-# # AND DAY(birth_date) = 08;
+# ORDER BY COUNT(CHAR_LENGTH(last_name)) DESC
+# WHERE YEAR(birth_date)= 1952
+# AND MONTH(birth_date) = 03
+# AND DAY(birth_date) = 08;
+SELECT last_name, MAX(LENGTH(last_name)) AS letters, birth_date
+FROM employees
+WHERE birth_date = '1952-03-08'
+GROUP BY last_name
+ORDER BY 2 DESC
+LIMIT 1;
 
+
+SELECT last_name, length(last_name)
+FROM employees
+WHERE birth_date = date('1952-03-08')
+GROUP BY last_name
+ORDER BY CHAR_LENGTH(last_name) DESC;
 
 
 
