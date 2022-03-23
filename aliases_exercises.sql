@@ -15,3 +15,5 @@ FROM employees
 ORDER BY DOB ASC
 LIMIT 10;
 
+DESCRIBE departments;
+DESCRIBE dept_emp;
